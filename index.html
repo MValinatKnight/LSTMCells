@@ -21,20 +21,19 @@ body {
   color: #e5ebf3;
 }
 
-.slide {
-  /* existing styles */
-  background-size: contain;
-  background-position: center;
-  max-width: 600px; /* or any other value that suits your needs */
-  max-height: 400px; /* or any other value that suits your needs */
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .slide {
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity 0.4s ease-in-out;
 }
@@ -107,11 +106,11 @@ body {
   color: #362a2b;
 }
 
-@media (min-width: 600px) and (min-height: 400px) {
+@media (min-width: 640px) and (min-height: 640px) {
   .slide .content {
     bottom: 70px;
-    left: -300px;
-    width: 400px;
+    left: -600px;
+    width: 600px;
     padding: 2rem;
     line-height: 1.6;
   }
@@ -129,7 +128,7 @@ body {
 
 <body>
   <!-- partial:index.partial.html -->
-  <div class="slider">
+ <div class="slider">
     <div class="slide current"></div>
     <div class="slide"></div>
     <div class="slide"></div>
@@ -149,7 +148,7 @@ body {
     const nextButton = document.getElementById("next");
     const prevButton = document.getElementById("prev");
     const auto = true;
-    const intervalTime = 7000;
+    const intervalTime = 5000;
     let slideInterval;
 
     const nextSlide = () => {
